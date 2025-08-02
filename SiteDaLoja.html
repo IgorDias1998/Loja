@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rações Santana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul: #252b81;
+      --amarelo: #252b81;
+      --cinza-claro: #FFD700;
+      --cinza: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--cinza-claro);
+      color: var(--cinza);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--azul);
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .header-center {
+  text-align: center;
+  padding: 20px;
+  background-color: #252b81;
+  border-bottom: 2px solid #252b81;
+}
+
+.header-center .logo {
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.header-center .social-links a {
+  margin: 0 10px;
+}
+
+.header-center .social-links img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.header-center .social-links img:hover {
+  transform: scale(1.1);
+}
+
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      max-width: 90%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-30%); }
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: var(--azul);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        max-height: 500px; /* limita a altura máxima */
+        height: auto; /* mantém a proporção original */
+        object-fit: contain; /* evita cortes na imagem */
+        border-radius: 0.75rem;
+        margin-bottom: 1rem;
+        background-color: #f9f9f9;
+    }
+
+    .top-bar {
+  background-color: #eee;
+  color: #333;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-bar .email {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.top-bar .social {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.top-bar .social img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.top-bar .social img:hover {
+  transform: scale(1.2);
+}
+
+.icones-container {
+  max-width: 900px;
+  margin: 30px auto; /* Centraliza o bloco */
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.icone-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.icone-box:last-child {
+  border-right: none;
+}
+
+.icone-box img {
+  width: 40px;
+  height: 40px;
+}
+
+.icone-box strong {
+  font-size: 16px;
+  color: #000;
+}
+
+.icone-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.main-header {
+  background-color: var(--azul);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.main-header .logo {
+  height: 60px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+    footer {
+      background-color: #252b81;
+      color: white; 
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .hero {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Topo informativo -->
+  <div class="top-bar">
+    <span><b>Bem-vindo à Rações Santana</b></span>
+    <div class="social">
+      <span><b>Siga nas Redes Sociais:</b></span>
+      <a href="https://www.instagram.com/racoessantana" target="_blank">
+        <img src="assets/images/instagram (1).png" alt="Instagram" />       
+      </a>
+      <a href="https://wa.me/message/JE4VE4RY4EGQH1" target="_blank">
+        <img src="assets/images/whatsapp (2).png" alt="WhatsApp" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Cabeçalho principal -->
+  <header class="main-header">
+    <img src="assets/images/logo.jpeg" alt="Logo Rações Santana" class="logo" />
+  </header>
+
+  <div class="hero">
+    <img src="assets/images/fachada.jpeg" alt="fachada da loja Rações Santana">
+  </div>
+
+  <div class="icones-container">
+  <div class="icone-box">
+    <a href="https://wa.me/message/JE4VE4RY4EGQH1" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="assets/images/entregaicone.png" alt="Frete Grátis">
+      <strong>Entregas</strong>
+      <p>Consulte disponibilidade</p>
+    </a>
+  </div>
+  <div class="icone-box">
+    <a href="https://wa.me/message/JE4VE4RY4EGQH1" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="assets/images/whatsapp (2).png" alt="WhatsApp">
+      <strong>WhatsApp</strong>
+      <p>Peça seu pedido pelo WhatsApp</p>
+    </a>
+  </div>
+  <div class="icone-box">
+    <a href="https://www.instagram.com/racoessantana" target="_blank" style="text-decoration: none; color: inherit;">
+      <img src="assets/images/instagram (1).png" alt="Instagram">
+      <strong>Instagram</strong>
+      <p>Siga @racoessantana</p>
+    </a>
+  </div>
+</div>
+
+<section class="section">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="assets/images/Bannerracoes.png" alt="Produto 1">
+        <h3>Rações e petiscos</h3>
+        <p>Variedade de rações e petiscos para cães e gatos, com qualidade garantida.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/entrega (1).png" alt="Produto 2">
+        <h3>Entrega na região</h3>
+        <p>Entregamos em domicílio com agilidade e segurança. <br>Consulte as regiões disponíveis</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/BannerJardim.png" alt="Produto 3">
+        <h3>Produtos para o seu jardim</h3>
+        <p>Setor dedicado a jardinagem, com varidade de vasos, terra, substratos, fertilizantes e muito mais.</p>
+      </div>
+      <div class="card">
+        <img src="assets/images/BannerAcessorios.png" alt="Produto 3">
+        <h3>Farmácia e acessórios</h3>
+        <p>Aqui você com diversas opções de medicamento e acessórios, sempre em busca de novidades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quem Somos</h2>
+    <p><b> Na Rações Santana, somos movidos pelo amor e cuidado com os animais. <br>Com mais de 8 anos na região de Cajamar.<br>
+
+Fundada com o propósito de oferecer produtos de qualidade e atendimento acolhedor, nossa loja é o ponto de confiança para quem busca tudo o que seu pet precisa.
+<br> seja ração, medicamentos, acessórios ou cuidados especiais.<br>
+
+Aqui, você encontra um time pronto para orientar e ajudar nas escolhas ideais para o bem-estar do seu companheiro de quatro patas (ou asas!) e claro para o seu jardim.
+
+<br> Com atendimento físico e online, buscamos facilitar o seu dia a dia e garantir que seu animalzinho tenha uma vida mais saudável, feliz e completa.
+
+<br>Cuidar de quem você ama é o que nos inspira todos os dias.<br>
+
+Rações Santana - tudo para o seu pet em um só lugar.</b></p>
+  </section>
+
+  <footer>
+    <p>Rações Santana © 2025. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
